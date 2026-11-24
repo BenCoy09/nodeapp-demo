@@ -8,7 +8,7 @@ const PAGE = `<!doctype html><html><head><meta charset="utf-8"><title>Cartly</ti
   document.getElementById('out').textContent = 'Total: $' + j.total;
 });</script></body></html>`;
 http.createServer((req, res) => {
-  if (req.url === '/api/total') { res.setHeader('content-type','application/json'); return res.end(JSON.stringify({ total: 42 })); }
+  if (req.url === '/api/cart-total') { res.setHeader('content-type','application/json'); return res.end(JSON.stringify({ total: 42 })); }
   if (req.url === '/') { res.setHeader('content-type','text/html'); return res.end(PAGE); }
   res.statusCode = 404; res.end('not found');
 }).listen(process.env.PORT || 3000);
